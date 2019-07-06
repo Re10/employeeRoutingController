@@ -1,0 +1,88 @@
+<html lang="en">
+
+<head>
+    <script src="angular.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/1.0.22/angular-ui-router.min.js"></script>
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/angular_material/1.0.0/angular-material.min.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.2/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.2/angular-animate.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.2/angular-aria.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.2/angular-messages.min.js"></script>
+
+    <!-- Angular Material Javascript now available via Google CDN; version 1.1.9 used here -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.9/angular-material.min.js"></script>
+
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-messages.min.js">
+    </script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angular_material/1.0.0/angular-material.min.js">
+    </script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
+    <style>
+        .closeButton {
+            position: relative;
+            height: 24px;
+            width: 24px;
+            line-height: 30px;
+            text-align: center;
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 50%;
+            border: none;
+            box-shadow: none;
+            padding: 0;
+            margin: 3px;
+            transition: background 0.15s linear;
+            display: block;
+        }
+    </style>
+
+    <script src="aaa.js"></script>
+</head>
+
+<body ng-app="firstApp">
+    <div ng-controller="chipController as ctrl" layout="column">
+
+
+        <md-chips class="custom-chips" ng-model="skills" ng-click="add(skills)">
+            <button md-chip-remove class="md-primary closeButton">
+                <md-icon md-svg-icon="md-close"></md-icon>
+            </button>
+        </md-chips>
+
+        <br />
+
+        <span style="color:Red">{{msgs}}</span>
+
+        {{skills}}
+
+
+
+
+
+
+        <div class="form-group col-md-4">
+            <label for="state">State</label>
+            <select id="inputState" ng-model="newemp.states" ng-options="state for (state,city) in states" value="state"
+                ng-change="GetSelectedState()">
+                <option value=''>Select</option>
+                <option></option>
+
+
+            </select>
+
+            <strong>SelectData = {{state}}</strong>
+        </div>
+
+        <div class="form-group col-md-4">
+            <label for="city">city</label>
+            <select id="inputCity" ng-model="newemp.city" ng-options="city for city in stat">
+                <option value=''>Select</option>
+            </select>
+        </div>
+    </div>
+</body>
+
+</html>

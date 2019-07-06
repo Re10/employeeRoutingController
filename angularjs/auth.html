@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+
+    <link rel="stylesheet" href="./style.css">
+
+    <script src="./contoller/login.js"></script>
+
+
+
+
+    <title>Emp Details</title>
+    <style>
+        .closeButton {
+            position: relative;
+            height: 24px;
+            width: 24px;
+            line-height: 30px;
+            text-align: center;
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 50%;
+            border: none;
+            box-shadow: none;
+            padding: 0;
+            margin: 3px;
+            transition: background 0.15s linear;
+            display: block;
+        }
+    </style>
+</head>
+
+
+<body ng-controller="authController">
+    <form name="myForm" ng-submit="submit()">
+        {{msg}}
+        <div>
+
+        </div>
+
+        <div class="form-container">
+            <h3><strong>Register Employee</strong></h3>
+            <div class="form-group ">
+                <label for="fname">First Name</label>
+                <input type="text" class="form-control" id="name" placeholder="First Name" ng-model="newregi.name"
+                    required>
+            </div>
+            <div class="form-group ">
+                <label for="inputPassword4">Email Name</label>
+                <input type="email" class="form-control" id="email" placeholder="Email" ng-model="newregi.email"
+                    required>
+            </div>
+            <div class="form-group ">
+                <label for="Mob">Mobile Number</label>
+                <input type="number" class="form-control" ng-minlength="10" ng-maxlength="10" id="inputPhone"
+                    name="phone" placeholder="Phone" ng-model="newregi.mob" ng-pattern="/^[7-9][0-9]{9}$/">
+                <span class="help-block" ng-show="myForm.phone.$error.required || 
+                                               myForm.phone.$error.number">
+                    Valid phone number is required
+                </span>
+                <span ng-show="myForm.phone.$error.pattern">Please enter valid number!</span>
+                <span class="help-block" ng-show="((myForm.phone.$error.minlength ||
+                                               myForm.phone.$error.maxlength) && 
+                                               myForm.phone.$dirty) ">
+                    phone number should be 10 digits
+                </span>
+            </div>
+            <div class="form-group ">
+                <label for="exampleInputPassword1">Password</label>
+                <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password"
+                    ng-model="newregi.pass">
+            </div>
+            <div class="form-group ">
+                <label for="exampleInputPassword2">Confirm Password</label>
+                <input type="password" class="form-control" id="exampleInputPassword2" placeholder="Password"
+                    ng-model="newregi.cpass">
+            </div>
+
+            <span style="color:Red">{{msge}}</span>
+
+
+
+            <div class="form-group col-md-6">
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </div>
+        </div>
+    </form>
+</body>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js"></script>
+
+</html>

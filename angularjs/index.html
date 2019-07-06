@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>AngularJS Simple CRUD</title>
+    <script src="angular.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/1.0.22/angular-ui-router.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-material/1.1.7/angular-material.min.js"></script>
+
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/angular_material/1.0.0/angular-material.min.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.2/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.2/angular-animate.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.2/angular-aria.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.2/angular-messages.min.js"></script>
+
+    <!-- Angular Material Javascript now available via Google CDN; version 1.1.9 used here -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.9/angular-material.min.js"></script>
+
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-messages.min.js">
+    </script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angular_material/1.0.0/angular-material.min.js">
+    </script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    <!-- toster file -->
+    <link rel="stylesheet" href="https://unpkg.com/angular-toastr/dist/angular-toastr.css" />
+    <script src="https://unpkg.com/angular-toastr/dist/angular-toastr.tpls.js"></script>
+    <link rel="stylesheet" href="./toster.css">
+    <!--  -->
+
+
+    <script src="../nodejs/server.js"></script>
+    <script src="app.js"></script>
+    <script src="./contoller/employeesctrl.js"></script>
+    <script src="./contoller/listCtrl.js"></script>
+    <script src="./contoller/editctrl.js"></script>
+    <script src="./contoller/addempctl.js"></script>
+    <script src="./contoller/auth.js"></script>
+    <script src="./contoller/login.js"></script>
+    <script src="./contoller/service.js"></script>
+    <script src="./contoller/forgotpass.js"></script>
+
+
+</head>
+<style>
+    .active {
+        font-weight: bold;
+    }
+</style>
+
+<body>
+    <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+        <span class="navbar-text" style="color:orange; font-size:20px;">
+            <strong>NEWS-PORTAL</strong>
+        </span>
+        <ul class="navbar-nav">
+
+            <li class="nav-item">
+                <a ui-sref="#" ui-sref-active="active" class="nav-link" style="color:white">Home</a>
+            </li>
+            <li class="nav-item">
+                <a ui-sref="employees" ui-sref-active="active" class="nav-link" style="color:white">Employees</a>
+            </li>
+            <li class="nav-item">
+                <a ui-sref="list" ui-sref-active="active" class="nav-link" style="color:white">Employee Details</a>
+            </li>
+            <li class="nav-item">
+                <a ui-sref="login" ui-sref-active="active" class="nav-link" style="color:white">Employee Login</a>
+            </li>
+
+        </ul>
+    </nav>
+    <div>
+        <ui-view></ui-view>
+    </div>
+
+</body>
+
+</html>

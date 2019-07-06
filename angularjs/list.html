@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="./contoller/employeesctrl.js"></script>
+    <script src="./contoller/addempctl.js"></script>
+    <script src="./contoller/listCtrl.js"></script>
+    <script src="./contoller/service.js"></script>
+    <title>Employee Details</title>
+</head>
+<style>
+    .img {
+        width: 50px;
+        height: auto;
+    }
+
+    .form-container {
+        width: 80%;
+        height: auto;
+        align-content: center;
+        padding: 5%;
+        margin-left: 3%;
+
+    }
+</style>
+
+<body ng-controller="listController">
+    msg:{{msg}}
+    <button type="submit" class="btn btn-primary pull-right" ng-click="logout()">Logout</button>
+    <a ui-sref="addemp" ui-sref-active="active" class="btn btn-success" style="float: right; margin-right: 10px">Quick
+        Add
+        Employee</a>
+
+    <div class="form-container">
+        <table class="table table-dark">
+            <thead>
+                <tr>
+                    <th scope="col">Employee Id</th>
+                    <th scope="col">Employee Img</th>
+                    <th scope="col">First Name</th>
+                    <th scope="col">Email</th>
+                    <th scope="col">DOB</th>
+                    <th scope="col">Skills</th>
+                    <th scope="col">Salary</th>
+                    <th scope="col">Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="employee in emp">
+                    <td>{{$index+1}}</td>
+                    <td>
+                        <image class="img" ng-src="{{url+employee.myImg}}">
+                        </image>
+                    </td>
+                    <td>{{employee.fname}}</td>
+                    <td>{{employee.email}}</td>
+                    <td>{{employee.dob | date :'yyyy-MM-dd'}}</td>
+                    <td>{{employee.skills}}</td>
+                    <td>{{employee.salary |currency}}</td>
+                    <td><a ui-sref="edit({id:employee._id})" ui-sref-active="active" class="btn btn-success">Edit</a>
+                    </td>
+                    <td><button type="submit" class="btn btn-primary" ng-click="delete(employee._id)">Delete</button>
+                    </td>
+                    <input type="hidden" name="id" ng-model="employee.id">
+                </tr>
+
+
+            </tbody>
+        </table>
+    </div>
+
+</body>
+
+</html>

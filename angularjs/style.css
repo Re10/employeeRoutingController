@@ -1,0 +1,35 @@
+.form-row{
+    padding: 50px;
+}
+.btn{
+    text-align: center;
+}
+.drop{
+    width: 10%;
+    height: 50%;
+    letter-spacing: normal;
+    word-spacing: normal;
+    text-transform: none;
+    text-indent: 0px;
+    text-shadow: none;
+    display: inline-block;
+    text-align: start;
+    margin: 0em;
+    font: 400 13.3333px Arial;
+}
+.form-container{
+    width:80%;
+    height: auto;
+    align-content: center;
+    padding: 5%;
+    margin-left:10%; 
+    box-shadow: 1px 10px 10px gray;
+}
+.form-containe{
+    width:50%;
+    height: auto;
+    align-content: center;
+    padding: 5%;
+    margin-left:10%; 
+    box-shadow: 1px 10px 10px gray;
+}
